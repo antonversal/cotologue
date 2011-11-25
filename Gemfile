@@ -29,4 +29,5 @@ gem 'unicorn'
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'cucumber-rails'
 end
