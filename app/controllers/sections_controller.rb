@@ -10,17 +10,6 @@ class SectionsController < ApplicationController
     end
   end
 
-  # GET /sections/1
-  # GET /sections/1.json
-  def show
-    @section = Section.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @section }
-    end
-  end
-
   # GET /sections/new
   # GET /sections/new.json
   def new
@@ -44,7 +33,7 @@ class SectionsController < ApplicationController
 
     respond_to do |format|
       if @section.save
-        format.html { redirect_to @section, notice: 'Section was successfully created.' }
+        format.html { redirect_to sections_url, notice: 'Section was successfully created.' }
         format.json { render json: @section, status: :created, location: @section }
       else
         format.html { render action: "new" }
@@ -60,7 +49,7 @@ class SectionsController < ApplicationController
 
     respond_to do |format|
       if @section.update_attributes(params[:section])
-        format.html { redirect_to @section, notice: 'Section was successfully updated.' }
+        format.html { redirect_to sections_url, notice: 'Section was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

@@ -11,10 +11,6 @@ describe SectionsController do
       get("/sections/new").should route_to("sections#new")
     end
 
-    it "routes to #show" do
-      get("/sections/1").should route_to("sections#show", :id => "1")
-    end
-
     it "routes to #edit" do
       get("/sections/1/edit").should route_to("sections#edit", :id => "1")
     end
