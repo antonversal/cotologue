@@ -1,10 +1,14 @@
-Feature: Addition
-  In order to avoid silly mistakes
-  As a math idiot
-  I want to be told the sum of two numbers
+Feature: Create
+  In order to build section structure
+  As a user
+  I want to create new section
 
-  Scenario Outline: Add two numbers
-    Given I have entered <input_1> into the calculator
-    And I have entered <input_2> into the calculator
-    When I press <button>
-    Then the result should be <output> on the screen
+  Scenario: Create new section
+    Given I am on new section page
+    When I fill section details correctly
+    Then I should be on the index section page
+
+  Scenario: Create new invalid section
+    Given I am on new section page
+    When I do not fill details
+    And I should see section errors
