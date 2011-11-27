@@ -30,7 +30,12 @@ gem 'unicorn'
 
 group :test, :development do
   gem 'ruby-debug19', require: "ruby-debug"
+
   gem 'rspec-rails'
+
+  gem 'factory_girl_rails'
+  gem 'faker'
+
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'shoulda'
