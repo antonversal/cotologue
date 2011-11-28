@@ -1,14 +1,17 @@
+@section_update
 Feature: Update
   In order to build section structure
   As a user
-  I want to create new section
+  I want to update section
+  Background:
+    Given section exists
 
-  Scenario: Create new section
-    Given I am on new section page
+  Scenario: Update section
+    Given I am on edit section page
     When I fill section details correctly
     Then I should be on the index section page
 
-  Scenario: Create new invalid section
-    Given I am on new section page
-    When I do not fill details
+  Scenario: Update section as invalid
+    Given I am on edit section page
+    When I erase details
     And I should see section errors

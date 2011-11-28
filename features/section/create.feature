@@ -1,3 +1,4 @@
+@section_create
 Feature: Create
   In order to build section structure
   As a user
