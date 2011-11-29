@@ -9,7 +9,7 @@ Feature: Update
   Scenario: Update section
     Given I am on edit section page
     When I fill section details correctly
-    Then I should be on the index section page
+    Then I should be on sections page
 
   Scenario: Update section as invalid
     Given I am on edit section page

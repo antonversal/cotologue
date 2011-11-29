@@ -7,7 +7,7 @@ Feature: Create
   Scenario: Create new section
     Given I am on new section page
     When I fill section details correctly
-    Then I should be on the index section page
+    Then I should be on sections page
 
   Scenario: Create new invalid section
     Given I am on new section page
