@@ -13,5 +13,5 @@ Feature: Update
 
   Scenario: Update section as invalid
     Given I am on edit section page
-    When I erase details
+    When I erase section details
     And I should see section errors
