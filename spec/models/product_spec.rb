@@ -8,5 +8,6 @@ describe Product do
   it { should have_db_index(:section_id) }
 
   it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:section) }
 
 end

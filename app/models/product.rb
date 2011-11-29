@@ -12,7 +12,7 @@ class Product < ActiveRecord::Base
   # Delegates
 
   # Validations: presence > by type > validates
-  validates_presence_of :name
+  validates_presence_of :name, :section
   # Other properties (e.g. accepts_nested_attributes_for)
 
   # Model dictionaries, state machine
