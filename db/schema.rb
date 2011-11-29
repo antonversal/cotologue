@@ -14,12 +14,14 @@
 ActiveRecord::Schema.define(:version => 20111129205446) do
 
   create_table "products", :force => true do |t|
-    t.string   "name"
+    t.string   "name",        :null => false
     t.text     "description"
     t.integer  "section_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "products", ["section_id"], :name => "index_products_on_section_id"
 
   create_table "sections", :force => true do |t|
     t.string   "name",        :null => false
