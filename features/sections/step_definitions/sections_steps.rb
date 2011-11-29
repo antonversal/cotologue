@@ -28,7 +28,7 @@ Given /^I am on edit section page$/ do
   visit edit_section_path(Section.last)
 end
 
-When /^I erase details$/ do
+When /^I erase section details$/ do
   fill_in :name, :with => ""
   fill_in :description, :with => ""
   click_button "section_commit"
