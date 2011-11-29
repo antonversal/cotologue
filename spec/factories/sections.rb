@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :section do
-    name  { Faker::Lorem.words.first }
+    name  { Faker::Lorem.word }
     description  { Faker::Lorem.sentence }
   end
 end

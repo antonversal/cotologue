@@ -33,8 +33,8 @@ group :test, :development do
 
   gem 'rspec-rails'
 
-  gem "factory_girl_rails", "~> 1.2"
-  gem 'faker'
+  gem 'factory_girl_rails', '~> 1.2'
+  gem 'ffaker'
 
   gem 'cucumber-rails'
   gem 'database_cleaner'
