@@ -1,6 +1,5 @@
 Cotologue::Application.routes.draw do
-
-  resources :products
-
-  resources :sections, except: :show
+  resources :sections, except: :show do
+    resources :products
+  end
 end
