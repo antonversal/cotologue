@@ -8,7 +8,7 @@ When /^I fill section details correctly$/ do
   click_button "section_commit"
 end
 
-Then /^I should be on the index section page$/ do
+Then /^I should be on sections page$/ do
   current_path.should eq(sections_path)
 end
 
@@ -32,4 +32,17 @@ When /^I erase details$/ do
   fill_in :name, :with => ""
   fill_in :description, :with => ""
   click_button "section_commit"
+end
+
+Given /^I am on sections page$/ do
+  visit sections_path
+end
+
+When /^I remove section$/ do
+  click_link "Destroy"
+  page.driver.browser.switch_to.alert.accept
+end
+
+Then /^I should not have the section$/ do
+  Section.all.count.should eq(0)
 end
