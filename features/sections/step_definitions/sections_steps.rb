@@ -3,8 +3,8 @@ Given /^I am on new section page$/ do
 end
 
 When /^I fill section details correctly$/ do
-  fill_in :name, :with => "Computers"
-  fill_in :description, :with => "Computers section"
+  fill_in "Name", :with => "Computers"
+  fill_in "Description", :with => "Computers section"
   click_button "section_commit"
 end
 
