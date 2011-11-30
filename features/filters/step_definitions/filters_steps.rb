@@ -27,3 +27,16 @@ When /^I erase filter details$/ do
   fill_in "Name", with: ""
   click_button "filter_commit"
 end
+
+Given /^I am on filters page$/ do
+  visit filters_path
+end
+
+When /^I remove filter$/ do
+  click_link "Destroy"
+  page.driver.browser.switch_to.alert.accept
+end
+
+Then /^I should not have the filter$/ do
+  Filter.count.should eq(0)
+end
