@@ -11,10 +11,6 @@ describe FiltersController do
       get("/filters/new").should route_to("filters#new")
     end
 
-    it "routes to #show" do
-      get("/filters/1").should route_to("filters#show", :id => "1")
-    end
-
     it "routes to #edit" do
       get("/filters/1/edit").should route_to("filters#edit", :id => "1")
     end

@@ -1,5 +1,5 @@
 Cotologue::Application.routes.draw do
-  resources :filters do
+  resources :filters, except: :show do
     resources :values
   end
 

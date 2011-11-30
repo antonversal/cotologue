@@ -10,17 +10,6 @@ class FiltersController < ApplicationController
     end
   end
 
-  # GET /filters/1
-  # GET /filters/1.json
-  def show
-    @filter = Filter.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @filter }
-    end
-  end
-
   # GET /filters/new
   # GET /filters/new.json
   def new
@@ -44,7 +33,7 @@ class FiltersController < ApplicationController
 
     respond_to do |format|
       if @filter.save
-        format.html { redirect_to @filter, notice: 'Filter was successfully created.' }
+        format.html { redirect_to filters_url, notice: 'Filter was successfully created.' }
         format.json { render json: @filter, status: :created, location: @filter }
       else
         format.html { render action: "new" }
@@ -60,7 +49,7 @@ class FiltersController < ApplicationController
 
     respond_to do |format|
       if @filter.update_attributes(params[:filter])
-        format.html { redirect_to @filter, notice: 'Filter was successfully updated.' }
+        format.html { redirect_to filters_url, notice: 'Filter was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

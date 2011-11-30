@@ -14,14 +14,6 @@ describe FiltersController do
     end
   end
 
-  describe "GET show" do
-    it "assigns the requested filter as @filter" do
-      filter = Filter.create! valid_attributes
-      get :show, :id => filter.id
-      assigns(:filter).should eq(filter)
-    end
-  end
-
   describe "GET new" do
     it "assigns a new filter as @filter" do
       get :new
@@ -53,7 +45,7 @@ describe FiltersController do
 
       it "redirects to the created filter" do
         post :create, :filter => valid_attributes
-        response.should redirect_to(Filter.last)
+        response.should redirect_to filters_url
       end
     end
 
@@ -89,7 +81,7 @@ describe FiltersController do
       it "redirects to the filter" do
         filter = Filter.create! valid_attributes
         put :update, :id => filter.id, :filter => valid_attributes
-        response.should redirect_to(filter)
+        response.should redirect_to filters_url
       end
     end
 

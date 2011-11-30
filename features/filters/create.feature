@@ -10,7 +10,7 @@ Feature: Create
   Scenario: Create new filter
     Given I am on new filter page
     When I fill filter details correctly
-    Then I should be on filter page
+    Then I should be on filters page
 
   Scenario: Create new invalid filter
     Given I am on new filter page
