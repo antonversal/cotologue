@@ -30,9 +30,8 @@ gem 'unicorn'
 
 group :test, :development do
 
-  unless ENV["CI"]
-    gem 'ruby-debug19', require: "ruby-debug"
-  end
+
+  gem 'ruby-debug19', require: "ruby-debug" unless ENV['TRAVIS']
 
   gem 'rspec-rails'
 
