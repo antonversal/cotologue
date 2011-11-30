@@ -41,9 +41,9 @@ end
 # You may also want to configure DatabaseCleaner to use different strategies for certain features and scenarios.
 # See the DatabaseCleaner documentation for details. Example:
 #
-#   Before('@no-txn,@selenium,@culerity,@celerity,@javascript') do
-#     DatabaseCleaner.strategy = :truncation, {:except => %w[widgets]}
-#   end
+Before('@no-txn,@selenium,@culerity,@celerity,@javascript') do
+  DatabaseCleaner.strategy = :truncation, {:except => %w[widgets]}
+end
 #
 #   Before('~@no-txn', '~@selenium', '~@culerity', '~@celerity', '~@javascript') do
 #     DatabaseCleaner.strategy = :transaction
@@ -58,5 +58,3 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 Capybara.add_selector(:simple_form_error) do
   xpath { |id|  "//*[@id='#{id}']/following-sibling::span" }
 end
-
-load "#{Rails.root}/db/schema.rb" # use db agnostic schema by default
