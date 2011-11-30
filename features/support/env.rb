@@ -58,3 +58,5 @@ Cucumber::Rails::Database.javascript_strategy = :truncation
 Capybara.add_selector(:simple_form_error) do
   xpath { |id|  "//*[@id='#{id}']/following-sibling::span" }
 end
+
+load "#{Rails.root}/db/schema.rb" # use db agnostic schema by default
