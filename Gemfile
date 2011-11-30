@@ -29,7 +29,10 @@ gem 'unicorn'
 # gem 'capistrano'
 
 group :test, :development do
-  gem 'ruby-debug19', require: "ruby-debug"
+
+  unless ENV["CI"]
+    gem 'ruby-debug19', require: "ruby-debug"
+  end
 
   gem 'rspec-rails'
 
