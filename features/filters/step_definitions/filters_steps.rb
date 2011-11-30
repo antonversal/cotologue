@@ -14,3 +14,16 @@ end
 When /^I should see filter errors$/ do
   find(:simple_form_error, "filter_name").text.should eq("can't be blank")
 end
+
+Given /^filter exists$/ do
+  Factory(:filter)
+end
+
+Given /^I am on edit filter page$/ do
+  visit edit_filter_path(Filter.last)
+end
+
+When /^I erase filter details$/ do
+  fill_in "Name", with: ""
+  click_button "filter_commit"
+end

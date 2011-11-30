@@ -9,7 +9,7 @@ Feature: Update
   Scenario: Update filter
     Given I am on edit filter page
     When I fill filter details correctly
-    Then I should be on filter page
+    Then I should be on filters page
 
   Scenario: Update filter as invalid
     Given I am on edit filter page
