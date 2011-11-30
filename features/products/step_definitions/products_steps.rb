@@ -21,15 +21,16 @@ Given /^product exists$/ do
 end
 
 Given /^I am on products page$/ do
- pending
+ visit section_products_path(Section.last)
 end
 
 When /^I remove product$/ do
-  pending # express the regexp above with the code you wish you had
+  click_link "Destroy"
+  page.driver.browser.switch_to.alert.accept
 end
 
 Then /^I should not have the product$/ do
-  pending # express the regexp above with the code you wish you had
+  Product.count.should eq(0)
 end
 
 Given /^I am on edit product page$/ do
@@ -40,4 +41,8 @@ When /^I erase product details$/ do
   fill_in "Name", :with => " "
   fill_in "Description", :with => " "
   click_button "product_commit"
+end
+
+Then /^I should be on products page$/ do
+  current_path.should eq(section_products_path(Section.last))
 end

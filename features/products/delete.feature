@@ -4,6 +4,9 @@ Feature: Create
   As a user
   I want to delete product
 
+  Background: Section exists
+    Given section exists
+
   @javascript
   Scenario: Delete product
     Given product exists

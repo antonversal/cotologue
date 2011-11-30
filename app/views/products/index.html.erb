@@ -14,14 +14,14 @@
   <tr>
     <td><%= product.name %></td>
     <td><%= product.description %></td>
-    <td><%= product.belongs_to %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= product.section.name %></td>
+    <td><%= link_to 'Show', [@section, product] %></td>
+    <td><%= link_to 'Edit', edit_section_product_path(@section, product) %></td>
+    <td><%= link_to 'Destroy', [@section, product], confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'New Product', new_section_product_path(@section) %>

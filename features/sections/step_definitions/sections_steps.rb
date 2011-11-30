@@ -44,5 +44,5 @@ When /^I remove section$/ do
 end
 
 Then /^I should not have the section$/ do
-  Section.all.count.should eq(0)
+  Section.count.should eq(0)
 end
