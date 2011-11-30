@@ -1,0 +1,25 @@
+<h1>Listing values</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Filter</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @values.each do |value| %>
+  <tr>
+    <td><%= value.name %></td>
+    <td><%= value.filter %></td>
+    <td><%= link_to 'Show', value %></td>
+    <td><%= link_to 'Edit', edit_value_path(value) %></td>
+    <td><%= link_to 'Destroy', value, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Value', new_value_path %>
