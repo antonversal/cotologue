@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_filter :load_section
   # GET /products
   # GET /products.json
   def index
@@ -44,7 +45,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to [@section, @product], notice: 'Product was successfully created.' }
         format.json { render json: @product, status: :created, location: @product }
       else
         format.html { render action: "new" }
@@ -60,7 +61,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+        format.html { redirect_to [@section, @product], notice: 'Product was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -76,8 +77,12 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
-      format.html { redirect_to products_url }
+      format.html { redirect_to section_products_url }
       format.json { head :ok }
     end
+  end
+
+  def load_section
+    @section = Section.find(params[:section_id])
   end
 end
