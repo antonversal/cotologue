@@ -4,5 +4,5 @@ rvm:
   - 1.9.3
   - ruby-head
 before_script:
-  - "bundle exec rake db:drop db:create db:migrate"
+  - "bundle exec rake db:create db:migrate"
   - "sh -e /etc/init.d/xvfb start"
