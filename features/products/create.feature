@@ -4,6 +4,9 @@ Feature: Create
   As a user
   I want to create new product
 
+  Background: Section exists
+    Given section exists
+
   Scenario: Create new product
     Given I am on new product page
     When I fill product details correctly

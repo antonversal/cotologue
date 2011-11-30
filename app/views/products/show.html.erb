@@ -12,9 +12,9 @@
 
 <p>
   <b>Belongs to:</b>
-  <%= @product.belongs_to %>
+  <%= @product.section.name %>
 </p>
 
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Edit', edit_section_product_path(@section, @product) %> |
+<%= link_to 'Back', section_products_path(@section) %>

@@ -1,13 +1,12 @@
-<%= simple_form_for(@product) do |f| %>
+<%= simple_form_for([@section,@product]) do |f| %>
   <%= f.error_notification %>
 
   <div class="inputs">
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :belongs_to %>
   </div>
 
   <div class="actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, id: "product_commit" %>
   </div>
 <% end %>
