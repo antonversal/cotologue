@@ -9,7 +9,7 @@ Feature: Update
   Scenario: Update product
     Given I am on edit product page
     When I fill product details correctly
-    Then I should be on products page
+    Then I should be on product page
 
   Scenario: Update product as invalid
     Given I am on edit product page

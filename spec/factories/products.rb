@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :product do
-    name "MyString"
-    description "MyText"
-    belongs_to ""
+    name { Faker::Lorem.word }
+    description { Faker::Lorem.sentence }
+    association :section
   end
 end

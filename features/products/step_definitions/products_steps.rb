@@ -9,7 +9,6 @@ When /^I fill product details correctly$/ do
 end
 
 Then /^I should be on product page$/ do
-  save_and_open_page
   current_path.should eq(section_product_path(Section.last, Product.last))
 end
 
@@ -18,18 +17,14 @@ When /^I should see product errors$/ do
 end
 
 Given /^product exists$/ do
-  pending # express the regexp above with the code you wish you had
+  Factory(:product)
 end
 
 Given /^I am on products page$/ do
-  pending # express the regexp above with the code you wish you had
+ pending
 end
 
 When /^I remove product$/ do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then /^I should be on products page$/ do
   pending # express the regexp above with the code you wish you had
 end
 
@@ -38,9 +33,11 @@ Then /^I should not have the product$/ do
 end
 
 Given /^I am on edit product page$/ do
-  pending # express the regexp above with the code you wish you had
+  visit edit_section_product_path(Section.last, Product.last)
 end
 
 When /^I erase product details$/ do
-  pending # express the regexp above with the code you wish you had
+  fill_in "Name", :with => " "
+  fill_in "Description", :with => " "
+  click_button "product_commit"
 end
