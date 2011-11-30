@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20111129205446) do
   create_table "products", :force => true do |t|
     t.string   "name",        :null => false
     t.text     "description"
-    t.integer  "section_id"
+    t.integer  "section_id",  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

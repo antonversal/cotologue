@@ -3,7 +3,7 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.string :name, null: false
       t.text :description
-      t.belongs_to :section
+      t.belongs_to :section, null: false
 
       t.timestamps
     end
