@@ -1,0 +1,8 @@
+script: "bundle exec rake travis"
+rvm:
+  - 1.9.2
+  - 1.9.3
+  - ruby-head
+before_script:
+  - "sh -e /etc/init.d/xvfb start"
+  - "bundle exec rake db:drop db:create db:migrate"
