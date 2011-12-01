@@ -7,4 +7,8 @@ describe Value do
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:filter) }
 
+  it { should have_many(:product_values) }
+  it { should have_many(:products) }
+
+
 end

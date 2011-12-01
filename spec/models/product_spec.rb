@@ -10,4 +10,9 @@ describe Product do
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:section) }
 
+  it { should belong_to(:section) }
+
+  it { should have_many(:product_values) }
+  it { should have_many(:values) }
+
 end

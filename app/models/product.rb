@@ -9,6 +9,9 @@ class Product < ActiveRecord::Base
   # Associations: belongs_to > has_one > has_many > has_and_belongs_to_many
   belongs_to :section
 
+  has_many :product_values
+  has_many :values, through: :product_values
+
   # Delegates
 
   # Validations: presence > by type > validates

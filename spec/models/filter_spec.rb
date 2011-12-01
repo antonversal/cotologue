@@ -5,6 +5,8 @@ describe Filter do
 
   it{ should validate_presence_of(:name)}
 
+  it { should have_many(:values) }
+
   context "exists" do
     before(:each){ Factory(:filter) }
 
