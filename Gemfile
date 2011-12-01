@@ -40,6 +40,6 @@ group :test, :development do
 
   gem 'cucumber-rails'
   gem 'database_cleaner'
-  gem 'shoulda'
+  gem 'shoulda', '>= 3.0.0.beta'
   gem 'launchy'
 end
