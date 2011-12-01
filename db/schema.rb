@@ -11,13 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111130203839) do
+ActiveRecord::Schema.define(:version => 20111201201152) do
 
   create_table "filters", :force => true do |t|
     t.string   "name",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "product_values", :force => true do |t|
+    t.integer  "product_id", :null => false
+    t.integer  "value_id",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "product_values", ["product_id", "value_id"], :name => "index_product_values_on_product_id_and_value_id"
+  add_index "product_values", ["product_id"], :name => "index_product_values_on_product_id"
+  add_index "product_values", ["value_id"], :name => "index_product_values_on_value_id"
 
   create_table "products", :force => true do |t|
     t.string   "name",        :null => false
