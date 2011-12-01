@@ -1,5 +1,5 @@
 # encoding: utf-8
-class ProductValues < ActiveRecord::Base
+class ProductValue < ActiveRecord::Base
   # Includes
 
   # Before, after callbacks
