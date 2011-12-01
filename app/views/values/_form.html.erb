@@ -1,4 +1,4 @@
-<%= simple_form_for(@value) do |f| %>
+<%= simple_form_for([@filter, @value]) do |f| %>
   <%= f.error_notification %>
 
   <div class="inputs">
@@ -7,6 +7,6 @@
   </div>
 
   <div class="actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, id: "value_commit" %>
   </div>
 <% end %>

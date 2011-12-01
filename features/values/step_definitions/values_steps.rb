@@ -4,6 +4,7 @@ end
 
 When /^I fill value details correctly$/ do
   fill_in "Name", with: "CPU"
+  click_button "value_commit"
 end
 
 Then /^I should be on values page$/ do
