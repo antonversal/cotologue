@@ -4,6 +4,10 @@
   <div class="inputs">
     <%= f.input :name %>
     <%= f.input :description %>
+    <% Filter.all.each do |filter| %>
+      <%= filter.name %>
+      <%= f.association :values, as: :check_boxes, collection: filter.values%>
+    <% end %>
   </div>
 
   <div class="actions">

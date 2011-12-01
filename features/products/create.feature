@@ -22,5 +22,6 @@ Feature: Create
     Given filters with values exists
     And I am on new product page
     When I set filter values for the product
+    And I fill product details correctly
     Then I should be on product page
     And I should see filter values

@@ -27,5 +27,9 @@ class Product < ActiveRecord::Base
 
   # Other model methods
 
+  def grouped_values
+    self.values.includes(:filter).all.group_by(&:filter)
+  end
+
   # Private methods (for example: custom validators)
 end

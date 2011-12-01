@@ -46,3 +46,23 @@ end
 Then /^I should be on products page$/ do
   current_path.should eq(section_products_path(Section.last))
 end
+
+Given /^filters with values exists$/ do
+  Factory(:value)
+  Factory(:value)
+  Factory(:value, filter: Filter.first)
+end
+
+When /^I set filter values for the product$/ do
+  check Value.first.name
+  check Value.last.name
+end
+
+Then /^I should see filter values$/ do
+  should have_content(Value.first.name)
+  should have_content(Value.last.name)
+end
+
+When /^I update product$/ do
+  click_button "product_commit"
+end

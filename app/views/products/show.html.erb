@@ -15,6 +15,15 @@
   <%= @product.section.name %>
 </p>
 
+<p>
+  <% @product.grouped_values.each do |filter, values| %>
+    <%= filter.name %>
+    <% values.each do |v| %>
+      <%= v.name %>
+    <% end %>
+  <% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_section_product_path(@section, @product) %> |
 <%= link_to 'Back', section_products_path(@section) %>

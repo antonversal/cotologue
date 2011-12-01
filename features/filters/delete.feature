@@ -5,12 +5,11 @@ Feature: Create
   I want to delete filter
 
   Background: Section exists
-    Given section exists
+    Given filter exists
 
   @javascript
   Scenario: Delete filter
-    Given filter exists
-    And I am on filters page
+    Given I am on filters page
     When I remove filter
     Then I should be on filters page
     And I should not have the filter
