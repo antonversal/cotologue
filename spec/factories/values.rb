@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :value do
-    name "MyString"
-    filter nil
+    name { Faker::Lorem.word }
+    association :filter
   end
 end
